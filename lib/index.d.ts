@@ -771,4 +771,58 @@ declare type ZodDataValidator<T extends z_2.ZodType = z_2.ZodType> = {
 /** @public */
 export declare const zodQrl: ZodConstructorQRL;
 
+/** @public */
+export declare interface CTMUStateInterface {
+  readonly data: any;
+  readonly version: number;
+  readonly timestamp: number;
+  selfDetermine(transformFn: (data: any) => any): CTMUStateInterface;
+  teliRecurse(purposeFn: (data: any, depth: number) => any, maxDepth?: number): any;
+  transition(newState: any): {
+    previous: any;
+    current: any;
+    delta: any;
+  };
+  toJSON(): {
+    data: any;
+    version: number;
+    timestamp: number;
+  };
+}
+
+/** @public */
+export declare interface CTMUDuality {
+  readonly space: any;
+  readonly time: number;
+  readonly info: any;
+  unified(): {
+    spatial: any;
+    temporal: number;
+    informational: any;
+    relationship: string;
+  };
+}
+
+/** @public */
+export declare interface CTMUSyntacticSemantic {
+  readonly syntax: string;
+  readonly semantics: any;
+  transition(newSyntax: string, newSemantics: any): {
+    from: { syntax: string; semantics: any };
+    to: { syntax: string; semantics: any };
+    isValid: boolean;
+  };
+}
+
+/** @public */
+export declare interface CTMUUtility {
+  createState(initialData?: any): CTMUStateInterface;
+  conspansiveDuality(spatial?: any, temporal?: number, informational?: any): CTMUDuality;
+  syntacticSemantic(syntax?: string, semantics?: any): CTMUSyntacticSemantic;
+  selfOrganize(elements: any[], organizationFn: (elements: any[]) => any[]): any[];
+}
+
+/** @public */
+export declare const ctmu: CTMUUtility;
+
 export { }
