@@ -8,6 +8,10 @@ Currently supported artifacts:
 - [`@builder.io/qwik-city`](https://github.com/QwikDev/qwik-city-build)
 - [`@builder.io/qwik-labs`](https://github.com/QwikDev/qwik-labs-build)
 
+## New in this build
+
+**CTMU Module**: This build includes a Cognitive-Theoretic Model of the Universe (CTMU) utility module that provides practical implementations of Christopher Langan's theoretical framework. See [docs/CTMU.md](docs/CTMU.md) for detailed usage instructions.
+
 The build artifact is created if:
 
 - Code is merged to `main` branch
